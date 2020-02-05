@@ -10,7 +10,20 @@
 
 let armstrongNumbers = [];
 
-// write your loop here...
+function armstrongNumbers(limit) {   // User can set upper limit on how many integers they want to explore
+    let armstrongs = [];
+    for (let i = 0; i < limit; i++) {
+        let sumOfCubes = 0;                // be ready to store the sum of cubes for each candidate number
+        let digits = String(i).split("");  // convert candidate number into list of its digits;
+        digits.forEach(function(digit) {
+            sumOfCubes += (digit**3);      // add each digit's cube together
+        });
+        if (sumOfCubes === i) {            // compare sum of cubes to candidate number
+            armstrongs.push(i);            // add matches to list of Armstrong numbers
+        }
+    }
+    return armstrongs;
+};
 
 
-console.log(armstrongNumbers);
+console.log(armstrongNumbers(100));      // Math is beautiful :)

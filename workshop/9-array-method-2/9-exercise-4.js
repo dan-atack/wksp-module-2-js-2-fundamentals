@@ -7,8 +7,14 @@
 // Write a function that accepts a list of numbers and returns a new list with
 // all of the even numbers removed.
 function removeEvens(lst) {
-    // lst is an array of strings
+    let evens = [];
+    lst.forEach(function(num) {
+        if (Number(num) % 2 === 0) {  // Even though the provided list wasn't full of strings, the function was be ready to convert!
+            evens.push(Number(num));
+        }
+    });
+    return evens;
+};
 
-}
 // -------------------------------------------------------------------------
-console.log('Q4 removeEvens()', removeEvens([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+console.log('Q4 removeEvens', removeEvens([1, "2", 3, "4", "5", 6, 7, 8, 9, 10]));

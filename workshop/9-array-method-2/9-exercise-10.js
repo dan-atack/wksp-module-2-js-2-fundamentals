@@ -10,7 +10,23 @@
 
 // Write function here
 
-
+function letterer(grades) {
+    let letters = [];
+    grades.forEach(function(grade) {
+        if (grade < 60) {
+            letters.push("F");
+        } else if (grade < 70) {
+            letters.push("D");
+        } else if (grade < 80) {
+            letters.push("C");
+        } else if (grade < 90) {
+            letters.push("B");
+        } else {
+            letters.push("A");
+        }
+    });
+    return letters;
+};
  
 // Call the function with [48, 95, 65, 48, 59, 78, 72, 65]
 

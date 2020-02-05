@@ -11,10 +11,15 @@
 // every([2,3,12], isEven) returns false
 
 function every(lst, func) {
-    // lst is an array and f is a function
-    // func takes 1 argument and returns a boolean
+    let canary = true;        // The idea is this will instantly stop the dangerous while loop at the first false value.
+    let i = 0;                             // index counter
+    while (canary && i<lst.length) {       // if the truth never changes, the loop ends at the last member of the list.
+        canary = func(lst[i]);             // test each item in the list one at a time. If one of them is false, the loop is over.
+        i++;                               // Don't forget to increase the index :)
+    }
+    return canary;                         // Like the canary in the coal mine ya know?
+};
 
-}
 // -------------------------------------------------------------------------
 function isEven(num) { return num % 2 === 0 }
 console.log('Q9: ', every([2, 42, 540, 8, 64], isEven));

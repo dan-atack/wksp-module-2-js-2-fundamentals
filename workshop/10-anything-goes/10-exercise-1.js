@@ -11,7 +11,14 @@
 // characters there are in the string.
 
 function countBs(str) {
+    let count = 0;                          // Setup tally variable to keep count of your B's.
+    for (let i = 0; i < str.length; i++) {  // For each index position,
+        if (str[i] === "B") {               // Check if the character at that location is a 'B,'
+            count++;                        // If it is, add one to your tally
+        }
+    }
+    return count;
+};
 
-}
 // -------------------------------------------------------------------------
 console.log('Q1: ', countBs('BananaBabyBubbles'));

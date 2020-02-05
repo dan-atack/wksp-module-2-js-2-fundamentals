@@ -14,10 +14,18 @@
 // filter([1, 2, 3, 4, 5], isEven) returns [2,4];
 
 function filter(lst, func) {
+    let boiledDown = [];                     // Create empty post-filter list.
+    for (let i = 0; i < lst.length; i++) {   // I wasted about 20 minutes because the 'i++' had the number one instead of an 'i'
+        if (func(lst[i])) {                  // Expect a boolean output from given function
+            boiledDown.push(lst[i]);         // All items passing the given function are kept...
+        }
+    };
+    return boiledDown;                       // ... And returned!
+};
+
     // lst is an array and f is a function
     // func takes one argument and returns a boolean (true or false)
 
-}
 // -------------------------------------------------------------------------
 function keepLong(str) { return str.length > 5 }
 console.log('Q8: ', filter(['Cyborg', 'Robin', 'Batman', 'Superman', 'Aquaman', 'Flash'], keepLong));

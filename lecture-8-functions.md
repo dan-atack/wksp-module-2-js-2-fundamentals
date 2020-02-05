@@ -56,13 +56,27 @@
 
 ```js
 // Q1. Write a function that returns the sum of 3 numbers.
+function adder(a, b, c) {
+    return a+b+c;
+};
 
+adder(1,2,3);
 
 // Q2. Write a function that returns the square of a number minus twice the number.
 
+function square(num) {
+    return num**2-(2*num);
+}
+
+square(2);
+
 
 // Q3. Write a function that returns the a person's full name, given their first and last names.
+function namer(firstName, lastName) {
+    return `${firstName} ${lastName}`;
+};
 
+namer("Dan","Atack");
 
 ```
 
@@ -73,11 +87,23 @@
 ```js
 // Q4. Write a function that returns the value of the tax for a given amount.
 
+function deathNtaxes(amt, percent) {  // BONUS: Choose your own tax rate! (Given in the form of an integer for percent value)
+    return (amt*percent)/100;
+};
+
+deathNtaxes(100, 15);
 
 // Q5. Write a function that returns the value 42.
 
+function fortyTwo() {
+    return 42;   // We have the answer, but what is the question??
+}
 
 // Q6. Write a function that returns "Hello!".
+
+function hello() {
+    return "hello!";
+}
 
 
 ```
